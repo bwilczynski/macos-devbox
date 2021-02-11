@@ -1,0 +1,10 @@
+---
+iterm2_casks:
+  - iterm2
+iterm2_fonts:
+  - font-fira-code
+zsh_theme: powerlevel10k/powerlevel10k
+zsh_plugins:
+  - git
+  - gitignore
+  - brew
