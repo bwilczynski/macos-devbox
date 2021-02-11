@@ -31,6 +31,12 @@ brew install openssl@1.1 rust
 env LDFLAGS="-L$(brew --prefix openssl@1.1)/lib" CFLAGS="-I$(brew --prefix openssl@1.1)/include" pip install -r requirements.txt
 ```
 
+You may also be required to install Rosetta 2:
+
+```
+sudo softwareupdate --install-rosetta
+```
+
 4. Install Ansible requirements
 
 ```sh
