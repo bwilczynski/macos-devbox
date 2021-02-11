@@ -1,8 +1,4 @@
 - hosts: localhost
   connection: local
-
-  tasks:
-  - name: Install homebrew casks
-    community.general.homebrew_cask:
-      name: visual-studio-code
-      state: present
+  roles:
+    - desktop
