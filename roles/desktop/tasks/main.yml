@@ -1,4 +1,9 @@
 ---
+- name: Add homebrew taps
+  community.general.homebrew_tap:
+    name: "{{ homebrew_taps }}"
+    state: present
+
 - name: Install homebrew casks
   community.general.homebrew_cask:
     name: "{{ homebrew_casks }}"

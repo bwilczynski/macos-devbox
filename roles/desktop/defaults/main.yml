@@ -1,4 +1,7 @@
 ---
+homebrew_taps:
+  - homebrew/cask-drivers
+
 homebrew_casks:
   - bitwarden
   - firefox
