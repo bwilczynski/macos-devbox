@@ -13,24 +13,24 @@ git_aliases:
   - name: co
     value: checkout
   - name: cob
-    value: "checkout -b"
+    value: checkout -b
   - name: df
     value: diff
   - name: lg
-    value: "log --graph --oneline --all --decorate"
+    value: log --graph --oneline --all --decorate
   - name: cm
-    value: "!git add -A && git commit -m"
+    value: '!git add -A && git commit -m'
   - name: branch-name
-    value: "!git symbolic-ref --short HEAD"
+    value: '!git symbolic-ref --short HEAD'
   - name: publish
-    value: "!git push -u origin $(git branch-name)"
+    value: '!git push -u origin $(git branch-name)'
   - name: unpublish
-    value: "!git push origin :$(git branch-name)"
+    value: '!git push origin :$(git branch-name)'
   - name: cleanup
-    value: '!git branch --merged | grep  -v "\\*\\|master\\|develop" | xargs -n 1 git branch -d'
+    value: '!git branch --merged | grep  -v "\\*\\|master\\|main\\|develop" | xargs -n 1 git branch -d'
   - name: purr
-    value: "pull --rebase"
+    value: pull --rebase
   - name: puff
-    value: "pull --ff-only"
+    value: pull --ff-only
   - name: cobf
-    value: "!f() { git checkout -b feature/$1; }; f"
+    value: '!f() { git checkout -b feature/$1; }; f'

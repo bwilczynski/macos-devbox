@@ -1,0 +1,25 @@
+---
+- name: Finder - set default view (List View)
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: Nlsv
+
+- name: Finder - new window target set to Home
+  osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTarget
+    value: PfHm
+
+- name: HID - Enable full keyboard access
+  community.general.osx_defaults:
+    key: AppleKeyboardUIMode
+    type: int
+    value: 3
+
+- name: HID - Disable natural scroll
+  osx_defaults:
+    key: com.apple.swipescrolldirection
+    type: bool
+    value: false

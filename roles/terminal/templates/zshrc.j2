@@ -2,10 +2,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH=/Users/{{ lookup('env', 'USER') }}/.oh-my-zsh
+export ZSH={{ lookup('env', 'HOME') }}/.oh-my-zsh
 DEFAULT_USER={{ lookup('env', 'USER') }}
 ZSH_THEME="{{ zsh_theme }}"
-plugins=("{{ zsh_plugins }}")
+plugins=({{ zsh_plugins | join(' ') }})
 
 source $ZSH/oh-my-zsh.sh
 
