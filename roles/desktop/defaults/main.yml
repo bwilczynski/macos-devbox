@@ -4,8 +4,14 @@ homebrew_taps:
 
 homebrew_casks:
   - bitwarden
+  - dropbox
   - firefox
+  - logitech-options
+  - microsoft-office
   - moom
   - obsidian
+  - slack
+  - sonos
+  - spotify
   - synology-drive
   - visual-studio-code
