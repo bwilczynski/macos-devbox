@@ -15,3 +15,9 @@ homebrew_casks:
   - spotify
   - synology-drive
   - visual-studio-code
+
+mas_apps:
+  - name: 2Do
+    id: 477670270
+  - name: Disk Speed Test
+    id: 425264550

@@ -8,3 +8,14 @@
   community.general.homebrew_cask:
     name: "{{ homebrew_casks }}"
     state: present
+
+- name: Make sure mas-cli is installed
+  community.general.homebrew:
+    name: mas
+    state: present
+
+- name: Install Mac AppStore Apps
+  community.general.mas:
+    id: "{{ item.id }}"
+    state: present
+  loop: "{{ mas_apps }}"
