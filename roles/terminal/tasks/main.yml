@@ -6,7 +6,7 @@
 
 - name: Install iterm2
   community.general.homebrew_cask:
-    name: "{{ iterm2_casks }}"
+    name: iterm2
     state: present
 
 - name: Install fonts
@@ -31,6 +31,24 @@
 - name: Install powerlevel10k theme
   shell: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
   when: not p10k_result.stat.exists
+
+- name: Install fzf
+  community.general.homebrew:
+    name: fzf
+    state: present
+
+- name: Get fzf location
+  shell: brew --prefix fzf
+  register: fzfprefix_output
+
+- name: Configure keybindings and fuzzy completion
+  template:
+    src: fzf.zsh.j2
+    dest: "{{ ansible_env.HOME }}/.fzf.zsh"
+    mode: 0755
+    backup: yes
+  vars:
+    fzf_path: fzfprefix_output.stdout
 
 - name: Update zshrc config
   template:
