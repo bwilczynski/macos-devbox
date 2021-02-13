@@ -48,7 +48,7 @@
     mode: 0755
     backup: yes
   vars:
-    fzf_path: fzfprefix_output.stdout
+    fzf_path: "{{ fzfprefix_output.stdout }}"
 
 - name: Update zshrc config
   template:
