@@ -8,3 +8,8 @@
   community.general.homebrew_cask:
     name: "{{ homebrew_casks }}"
     state: present
+
+- name: Install homebrew packages
+  community.general.homebrew:
+    name: "{{ homebrew_packages }}"
+    state: present

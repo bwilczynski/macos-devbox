@@ -1,6 +1,7 @@
 ---
 homebrew_taps:
   - homebrew/cask-drivers
+  - bwilczynski/tap
 
 homebrew_casks:
   - bitwarden
@@ -16,3 +17,20 @@ homebrew_casks:
   - synology-drive
   - visual-studio-code
   - vlc
+
+homebrew_packages:
+  - cloc
+  - git
+  - git-lfs
+  - gnu-tar
+  - go
+  - htop
+  - httpie
+  - jq
+  - kubernetes-cli
+  - sonos-cli
+  - speedtest-cli
+  - ssh-copy-id
+  - step
+  - strava-cli
+  - wrk
