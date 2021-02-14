@@ -13,4 +13,4 @@
   ansible.builtin.copy:
     src: gitignore_global
     dest: ~/.gitignore_global
-    mode: '0644'
+    mode: "0644"

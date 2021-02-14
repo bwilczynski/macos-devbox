@@ -29,7 +29,10 @@
   register: p10k_result
 
 - name: Install powerlevel10k theme
-  shell: git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  ansible.builtin.git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/themes/powerlevel10k"
+    depth: 1
   when: not p10k_result.stat.exists
 
 - name: Install fzf
@@ -38,15 +41,16 @@
     state: present
 
 - name: Get fzf location
-  shell: brew --prefix fzf
+  command: brew --prefix fzf
   register: fzfprefix_output
+  changed_when: false
 
 - name: Configure keybindings and fuzzy completion
   template:
     src: fzf.zsh.j2
     dest: "{{ ansible_env.HOME }}/.fzf.zsh"
     mode: 0755
-    backup: yes
+    backup: true
   vars:
     fzf_path: "{{ fzfprefix_output.stdout }}"
 
@@ -55,4 +59,4 @@
     src: zshrc.j2
     dest: "{{ ansible_env.HOME }}/.zshrc"
     mode: 0755
-    backup: yes
+    backup: true
