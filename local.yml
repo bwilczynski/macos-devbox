@@ -2,6 +2,7 @@
   connection: local
   roles:
     - os_defaults
+    - keyremapper
     - git
     - terminal
     - homebrew
