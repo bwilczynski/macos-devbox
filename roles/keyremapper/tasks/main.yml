@@ -1,19 +1,19 @@
 ---
 - name: Ensure folder for script exists
   ansible.builtin.file:
-    path: "{{ keyremapper_path }}"
+    path: "{{ keyremapper_path | dirname }}"
     state: directory
     mode: "0755"
 
 - name: Install keyremapper script in user bin folder
   ansible.builtin.template:
     src: keyremapper.j2
-    dest: "{{ keyremapper_path }}/keyremapper"
+    dest: "{{ keyremapper_path }}"
     mode: 0755
   notify: Restart keyremapper
 
 - name: Run keyremapper at launch
   ansible.builtin.template:
-    src: "{{ keyremapper_service }}.plist.j2"
+    src: "keyremapper.plist.j2"
     dest: "{{ ansible_env.HOME }}/Library/LaunchAgents/{{ keyremapper_service }}.plist"
   notify: Restart keyremapper

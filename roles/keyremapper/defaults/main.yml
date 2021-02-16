@@ -1,5 +1,5 @@
 ---
-keyremapper_path: "{{ ansible_env.HOME }}/bin"
+keyremapper_path: "{{ ansible_env.HOME }}/bin/keyremapper"
 keyremapper_keymapping:
   - src: 0x7000000e7
     dst: 0x7000000e6
