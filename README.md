@@ -2,6 +2,16 @@
 
 MacOS development box setup automated using Ansible playbook.
 
+## Features
+
+Configures my personal preferences but you can customize it for your liking.
+
+1. Install desktop and terminal apps using Homebrew
+2. Setup terminal (iterm2 fonts, ohmyzsh, custom theme, fzf etc.)
+3. Setup git aliases
+4. Setup system defaults (finder behavior, full keyboard access, disable natural scrolling)
+5. Remap right command to option
+
 ## Installation
 
 1. Install [Homebrew](https://brew.sh/)
