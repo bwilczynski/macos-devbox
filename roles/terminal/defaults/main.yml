@@ -6,3 +6,6 @@ zsh_plugins:
   - git
   - gitignore
   - brew
+  - autojump
+zsh_packages:
+  - autojump

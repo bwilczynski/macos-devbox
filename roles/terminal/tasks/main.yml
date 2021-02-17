@@ -15,16 +15,16 @@
     state: present
 
 - name: Check if ohmyzsh is already installed
-  stat:
+  ansible.builtin.stat:
     path: "{{ ansible_env.HOME }}/.oh-my-zsh"
   register: ohmyzsh_result
 
 - name: Install ohmyzsh
-  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  ansible.builtin.shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   when: not ohmyzsh_result.stat.exists
 
 - name: Check if powerlevel10k is already installed
-  stat:
+  ansible.builtin.stat:
     path: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/themes/powerlevel10k"
   register: p10k_result
 
@@ -41,12 +41,12 @@
     state: present
 
 - name: Get fzf location
-  command: brew --prefix fzf
+  ansible.builtin.command: brew --prefix fzf
   register: fzfprefix_output
   changed_when: false
 
 - name: Configure keybindings and fuzzy completion
-  template:
+  ansible.builtin.template:
     src: fzf.zsh.j2
     dest: "{{ ansible_env.HOME }}/.fzf.zsh"
     mode: 0755
@@ -54,8 +54,12 @@
   vars:
     fzf_path: "{{ fzfprefix_output.stdout }}"
 
+- name: Install additional packages required by plugins
+  community.general.homebrew:
+    name: "{{ zsh_packages }}"
+
 - name: Update zshrc config
-  template:
+  ansible.builtin.template:
     src: zshrc.j2
     dest: "{{ ansible_env.HOME }}/.zshrc"
     mode: 0755
