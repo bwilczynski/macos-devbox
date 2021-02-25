@@ -10,7 +10,8 @@ Configures my personal preferences but you can customize it for your liking.
 2. Setup terminal (iterm2 fonts, ohmyzsh, custom theme, fzf etc.)
 3. Setup git aliases
 4. Setup system defaults (finder behavior, full keyboard access, disable natural scrolling)
-5. Remap right command to option
+5. Remap keys (by default right command to option)
+6. Share ssh configs
 
 ## Installation
 
