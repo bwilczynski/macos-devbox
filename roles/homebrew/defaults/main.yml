@@ -28,6 +28,7 @@ homebrew_packages:
   - httpie
   - jq
   # - kubernetes-cli # no bottle available for M1
+  - pyenv
   - sonos-cli
   - speedtest-cli
   - ssh-copy-id
