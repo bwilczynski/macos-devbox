@@ -1,0 +1,5 @@
+---
+dotfiles_shared_dir: "{{ ansible_env.HOME }}/SynologyDrive/Settings/dotfiles"
+dotfiles:
+  - src: kube-config
+    dest: .kube/config

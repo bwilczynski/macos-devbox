@@ -11,7 +11,7 @@
     dest: "{{ ansible_env.HOME }}/.ssh/config"
     mode: 0644
 
-- name: Copy each file over that matches the given pattern
+- name: Link each shared config file to config.d
   ansible.builtin.file:
     src: "{{ item }}"
     dest: "{{ ansible_env.HOME }}/.ssh/config.d/{{ item | basename }}"

@@ -1,0 +1,13 @@
+---
+- name: Ensure folder exists for linked files
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/{{ item.dest | dirname }}"
+    state: directory
+  loop: "{{ dotfiles }}"
+
+- name: Link each shared dotfile to corresponding location
+  ansible.builtin.file:
+    src: "{{ dotfiles_shared_dir }}/{{ item.src }}"
+    dest: "{{ ansible_env.HOME }}/{{ item.dest }}"
+    state: link
+  loop: "{{ dotfiles }}"
