@@ -27,11 +27,11 @@ homebrew_packages:
   - htop
   - httpie
   - jq
-  # - kubernetes-cli # no bottle available for M1
+  - kubernetes-cli
   - pyenv
   - sonos-cli
   - speedtest-cli
   - ssh-copy-id
-  # - step # no bottle available for M1
+  - step
   - strava-cli
   # - wrk # no bottle available for M1
