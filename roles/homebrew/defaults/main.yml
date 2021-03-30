@@ -19,6 +19,7 @@ homebrew_casks:
   - vlc
 
 homebrew_packages:
+  - p7zip
   - cloc
   - git
   - git-lfs
