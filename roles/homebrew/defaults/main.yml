@@ -17,6 +17,7 @@ homebrew_casks:
   - synology-drive
   - visual-studio-code
   - vlc
+  - zoom
 
 homebrew_packages:
   - p7zip
