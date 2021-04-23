@@ -4,6 +4,7 @@ homebrew_taps:
   - bwilczynski/tap
 
 homebrew_casks:
+  - adobe-acrobat-reader
   - bitwarden
   - dropbox
   - firefox
