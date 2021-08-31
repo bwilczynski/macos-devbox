@@ -6,6 +6,7 @@ homebrew_taps:
 homebrew_casks:
   - adobe-acrobat-reader
   - bitwarden
+  - docker
   - dropbox
   - firefox
   - logitech-options
