@@ -64,3 +64,10 @@
     dest: "{{ ansible_env.HOME }}/.zshrc"
     mode: 0755
     backup: true
+
+- name: Install devbox script
+  ansible.builtin.template:
+    src: devbox.zsh.j2
+    dest: "{{ ansible_env.HOME }}/.devbox.zsh"
+    mode: 0755
+    backup: true
