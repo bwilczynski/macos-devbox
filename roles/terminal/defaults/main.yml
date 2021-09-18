@@ -9,4 +9,4 @@ zsh_plugins:
 zsh_packages:
   - autojump
   - pygments
-devbox_image: ghcr.io/bwilczynski/devbox
+devbox_image: ghcr.io/bwilczynski/devbox:main
