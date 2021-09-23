@@ -11,6 +11,7 @@ homebrew_casks:
   - firefox
   - logitech-options
   - microsoft-office
+  - microsoft-teams
   - moom
   - obsidian
   - slack
