@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 install() {
-  hidutil property --set '{"UserKeyMapping":
+  hidutil property --matching '{{ keyremapper_matching_devices }}' --set '{"UserKeyMapping":
     [
 {% for key in keyremapper_keymapping %}
       {"HIDKeyboardModifierMappingSrc":{{ key.src }}, "HIDKeyboardModifierMappingDst":{{ key.dst }}},
@@ -11,7 +11,7 @@ install() {
 }
 
 uninstall() {
-  hidutil property --set '{"UserKeyMapping":
+  hidutil property --matching '{{ keyremapper_matching_devices }}' --set '{"UserKeyMapping":
     [
 {% for key in keyremapper_keymapping %}
       {"HIDKeyboardModifierMappingSrc":{{ key.src }}, "HIDKeyboardModifierMappingDst":{{ key.src }}},
