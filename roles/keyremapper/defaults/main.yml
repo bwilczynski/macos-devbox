@@ -3,5 +3,5 @@ keyremapper_path: "{{ ansible_env.HOME }}/bin/keyremapper"
 keyremapper_keymapping:
   - src: 0x7000000e7
     dst: 0x7000000e6
-keyremapper_matching_devices: '[{ "VendorID":0x5ac, "ProductID":0x281 },{ "VendorID":0x46d, "ProductID":0xc52b }]'
+keyremapper_matching_devices: '[{ "VendorID":0x5ac, "ProductID":0x281 },{ "VendorID":0x46d, "ProductID":0xc52b },{ "VendorID":0x46d, "ProductID":0xb35b }]'
 keyremapper_service: com.bwilczynski.keyremapper
