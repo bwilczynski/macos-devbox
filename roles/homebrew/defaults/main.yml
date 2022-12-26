@@ -23,7 +23,6 @@ homebrew_casks:
   - zoom
 
 homebrew_packages:
-  - p7zip
   - cloc
   - git
   - git-lfs
@@ -32,11 +31,17 @@ homebrew_packages:
   - htop
   - httpie
   - jq
+  - k9s
+  - kind
+  - kubectx
   - kubernetes-cli
+  - kustomize
+  - p7zip
   - pyenv
   - sonos-cli
   - speedtest-cli
   - ssh-copy-id
   - step
   - strava-cli
-  # - wrk # no bottle available for M1
+  - tilt
+  - wrk

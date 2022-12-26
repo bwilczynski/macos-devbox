@@ -71,3 +71,10 @@
     dest: "{{ ansible_env.HOME }}/.devbox.zsh"
     mode: 0755
     backup: true
+
+- name: Install kubectl aliases
+  ansible.builtin.template:
+    src: kubectl.zsh.j2
+    dest: "{{ ansible_env.HOME }}/.kubectl.zsh"
+    mode: 0755
+    backup: true
